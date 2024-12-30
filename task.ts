@@ -31,6 +31,7 @@ export const createTaskRun =
         const task = new TaskRun();
         task.logs = [];
         task.type = name;
+        task.start = new Date();
 
         (async () => {
             log({ name: `Creating task "${task.type}"` });
