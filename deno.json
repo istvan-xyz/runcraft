@@ -1,0 +1,12 @@
+{
+    "name": "@istvan/runcraft",
+    "version": "0.0.1",
+    "license": "MIT",
+    "exports": {
+        "./log": "./log.ts"
+    },
+    "imports": {
+        "@std/assert": "jsr:@std/assert@1"
+    },
+    "exclude": ["cspell.json"]
+}
