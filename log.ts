@@ -20,7 +20,7 @@ export interface LogEvent {
 export const format = (event: LogEvent): string =>
     JSON.stringify({ ...event, time: new Date().toISOString() }, createCircularReplacer());
 
-const log = (event: LogEvent) => {
+export const log = (event: LogEvent) => {
     console.log(format(event));
 };
 
