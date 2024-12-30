@@ -1,4 +1,5 @@
-const createCircularReplacer = () => {
+// deno-lint-ignore no-explicit-any
+const createCircularReplacer = (): any => {
     const seen = new WeakSet();
     return (_key: string, value: unknown) => {
         if (typeof value === 'object' && value !== null) {
@@ -16,7 +17,7 @@ export interface LogEvent {
     [key: string]: unknown;
 }
 
-export const format = (event: LogEvent) =>
+export const format = (event: LogEvent): string =>
     JSON.stringify({ ...event, time: new Date().toISOString() }, createCircularReplacer());
 
 const log = (event: LogEvent) => {
@@ -34,7 +35,10 @@ const isPromise = (value: unknown): value is Promise<unknown> => {
 };
 
 // deno-lint-ignore no-explicit-any
-export const instrument = <F extends (...args: any[]) => any>(logEvent: Record<string, unknown>, fn: F) => {
+export const instrument = <F extends (...args: any[]) => any>(
+    logEvent: Record<string, unknown>,
+    fn: F,
+): ((...args: Parameters<F>) => ReturnType<F>) => {
     return (...args: Parameters<F>): ReturnType<F> => {
         const startTime = Date.now();
         log({
