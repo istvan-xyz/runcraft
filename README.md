@@ -23,7 +23,7 @@ Tasks need to be able to send notifications for various important events like fa
 
 ### AWS SES
 
-The `AWS_REGION` and `AWS_PROFILE` are required to be configured for this method to work.
+The `AWS_REGION` and `AWS_PROFILE` environment variables are required to be configured for this method to work.
 
 ```ts
 import { sendEmail } from '@istvan/runcraft/notification/aws_ses';
@@ -33,5 +33,21 @@ sendEmail({
     to: ['test2@example.com'],
     subject: 'test',
     body: 'test body',
+});
+```
+
+### Mattermost
+
+The `MATTERMOST_WEBHOOK_URL` environment variable is required to configure this method.
+
+```ts
+import { sendMattermostMessage } from '@istvan/runcraft/notification/mattermost';
+
+sendMattermostMessage({
+    message: 'Example message.',
+    channel: 'channel',
+    username: 'bot',
+}).catch((error) => {
+    throw error;
 });
 ```
