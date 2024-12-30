@@ -1,11 +1,13 @@
 {
     "name": "@istvan/runcraft",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "license": "MIT",
     "exports": {
-        "./log": "./log.ts"
+        "./log": "./log.ts",
+        "./notification/aws_ses": "./notification/aws_ses.ts"
     },
     "imports": {
+        "@aws-sdk/client-ses": "npm:@aws-sdk/client-ses@^3.716.0",
         "@std/assert": "jsr:@std/assert@1"
     },
     "exclude": ["cspell.json"]
