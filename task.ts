@@ -1,9 +1,9 @@
 import { format, instrument, log } from '@istvan/runcraft/log';
-import { sendEmail } from '@istvan/runcraft/notification/aws_ses';
-import { sendMattermostMessage } from '@istvan/runcraft/notification/mattermost';
 import { debounce } from '@std/async/debounce';
 import type { DataSource } from 'typeorm';
 import TaskRun from './entities/TaskRun.ts';
+import { sendEmail } from './notification/aws_ses.ts';
+import { sendMattermostMessage } from './notification/mattermost.ts';
 
 type TaskRunnerContext = { log: typeof log; db: DataSource };
 
