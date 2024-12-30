@@ -35,7 +35,7 @@ export class TaskRun {
     error?: string;
 
     @Column('timestamptz')
-    start = new Date();
+    start!: Date;
 
     @Column('timestamptz', { nullable: true })
     end?: Date;
