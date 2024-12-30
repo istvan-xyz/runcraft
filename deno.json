@@ -1,13 +1,13 @@
 {
     "name": "@istvan/runcraft",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "license": "MIT",
     "exports": {
         "./task": "./task.ts",
         "./log": "./log.ts",
         "./notification/aws_ses": "./notification/aws_ses.ts",
         "./notification/mattermost": "./notification/mattermost.ts",
-        "./entities/entities": "./entities/mod.ts"
+        "./entities": "./entities/mod.ts"
     },
     "imports": {
         "@aws-sdk/client-ses": "npm:@aws-sdk/client-ses@^3.716.0",
