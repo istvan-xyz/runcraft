@@ -70,3 +70,11 @@ sendMattermostMessage({
     throw error;
 });
 ```
+
+## Integrations
+
+### Sentry
+
+```ts
+import '@istvan/runcraft/sentry';
+```

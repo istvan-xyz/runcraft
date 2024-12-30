@@ -5,6 +5,7 @@
     "jsr:@std/async@^1.0.9": "1.0.9",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@aws-sdk/client-ses@^3.716.0": "3.716.0_@aws-sdk+client-sts@3.716.0__@aws-sdk+client-sso-oidc@3.716.0___@aws-sdk+client-sts@3.716.0_@aws-sdk+client-sso-oidc@3.716.0__@aws-sdk+client-sts@3.716.0___@aws-sdk+client-sso-oidc@3.716.0____@aws-sdk+client-sts@3.716.0__@aws-sdk+client-sts@3.716.0___@aws-sdk+client-sso-oidc@3.716.0____@aws-sdk+client-sts@3.716.0_____@aws-sdk+client-sso-oidc@3.716.0___@aws-sdk+client-sso-oidc@3.716.0",
+    "npm:@sentry/deno@^8.47.0": "8.47.0",
     "npm:@types/node@*": "22.5.4",
     "npm:typeorm@~0.3.20": "0.3.20"
   },
@@ -2089,6 +2090,15 @@
     "@pkgjs/parseargs@0.11.0": {
       "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg=="
     },
+    "@sentry/core@8.47.0": {
+      "integrity": "sha512-iSEJZMe3DOcqBFZQAqgA3NB2lCWBc4Gv5x/SCri/TVg96wAlss4VrUunSI2Mp0J4jJ5nJcJ2ChqHSBAU48k3FA=="
+    },
+    "@sentry/deno@8.47.0": {
+      "integrity": "sha512-zulDCXy1vya5FgxFi2PVcFjhfKLDOueTJTCg6hoxCvkkjfGfdBYkTE6d/m5Olx+fS9Bx0F3UwyQ6h63wy9xmtQ==",
+      "dependencies": [
+        "@sentry/core"
+      ]
+    },
     "@smithy/abort-controller@3.1.9": {
       "integrity": "sha512-yiW0WI30zj8ZKoSYNx90no7ugVn3khlyH/z5W8qtKBtVE6awRALbhSG+2SAHA1r6bO/6M9utxYKVZ3PCJ1rWxw==",
       "dependencies": [
@@ -2848,6 +2858,7 @@
       "jsr:@std/assert@1",
       "jsr:@std/async@^1.0.9",
       "npm:@aws-sdk/client-ses@^3.716.0",
+      "npm:@sentry/deno@^8.47.0",
       "npm:typeorm@~0.3.20"
     ]
   }
