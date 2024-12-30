@@ -1,6 +1,6 @@
 import { debounce } from '@std/async/debounce';
 import type { DataSource } from 'typeorm';
-import TaskRun from './entities/TaskRun.ts';
+import { TaskRun } from './entities/TaskRun.ts';
 import { format, instrument, log } from './log.ts';
 import { sendEmail } from './notification/aws_ses.ts';
 import { sendMattermostMessage } from './notification/mattermost.ts';

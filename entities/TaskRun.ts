@@ -4,7 +4,7 @@ const statuses = ['requested', 'running', 'complete', 'error', 'stopped'] as con
 type RunStatus = (typeof statuses)[number];
 
 @Entity()
-export default class TaskRun {
+export class TaskRun {
     @PrimaryGeneratedColumn()
     id!: number;
 
