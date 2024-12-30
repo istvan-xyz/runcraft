@@ -5,7 +5,7 @@ import { format, instrument, log } from './log.ts';
 import { sendEmail } from './notification/aws_ses.ts';
 import { sendMattermostMessage } from './notification/mattermost.ts';
 
-type TaskRunnerContext = { log: typeof log; db: DataSource };
+export type TaskRunnerContext = { log: typeof log; db: DataSource };
 
 type TaskDefinition<Context extends TaskRunnerContext> = {
     name: string;
