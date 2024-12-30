@@ -4,6 +4,25 @@ RunCraft is a powerful and intuitive task runner for the Deno ecosystem. It allo
 
 This library aims to be as lightweight as possible with minimal dependencies and steps taken to avoid making you pay for code that you don't use.
 
+## Getting started
+
+```ts
+import { log } from '@istvan/runcraft/log';
+import { registerTasks } from '@istvan/runcraft/task';
+import db from './db.ts';
+import { registerTasks } from './task.ts';
+import tasks from './tasks/mod.ts';
+
+await db.initialize();
+
+const context = {
+    log,
+    db,
+};
+
+registerTasks(context, tasks);
+```
+
 ## Logging
 
 Logging is structured with `name` being the only mandatory field.
