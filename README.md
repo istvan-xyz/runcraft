@@ -10,7 +10,6 @@ This library aims to be as lightweight as possible with minimal dependencies and
 import { log } from '@istvan/runcraft/log';
 import { registerTasks } from '@istvan/runcraft/task';
 import db from './db.ts';
-import { registerTasks } from './task.ts';
 import tasks from './tasks/mod.ts';
 
 await db.initialize();
@@ -21,6 +20,37 @@ const context = {
 };
 
 registerTasks(context, tasks);
+```
+
+Writing a task:
+
+```ts
+import type Context from '../context.ts';
+
+const name = 'do_something';
+const schedule = '*/5 * * * *';
+
+const doSomething = async ({ log, db }: Context) => {
+    log({
+        name,
+    });
+
+    // do something
+};
+
+export default {
+    name,
+    task: doSomething,
+    schedule,
+};
+```
+
+Adding it to the task list:
+
+```ts
+import doSomething from './do_something.ts';
+
+export default [do_something];
 ```
 
 ## Logging
