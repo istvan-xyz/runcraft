@@ -24,7 +24,7 @@ export const createTaskRun =
         context: Context,
         { name, task: taskFn }: TaskDefinition<Context>,
     ): (() => void) =>
-    () => {
+    async () => {
         const { db } = context;
 
         const taskRunRepository = db.getRepository(TaskRun);
@@ -33,7 +33,7 @@ export const createTaskRun =
         task.type = name;
         task.start = new Date();
 
-        (async () => {
+        await (async () => {
             log({ name: `Creating task "${task.type}"` });
 
             await taskRunRepository.save(task);
