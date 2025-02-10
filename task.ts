@@ -114,7 +114,7 @@ export const registerTasks = <Context extends TaskRunnerContext>(
     for (const task of definitions) {
         log({
             name: 'register_task',
-            task: name,
+            task: task.name,
             schedule: task.schedule,
         });
         Deno.cron(task.name, task.schedule, createTaskRun(context, task));
